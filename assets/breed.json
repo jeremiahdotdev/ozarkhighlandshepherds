@@ -30,42 +30,48 @@
         "nickname": "Rolo",
         "price": 1200,
         "images": ["/easter/easter_rolo.jpeg"],
-        "sex": "Male"
+        "sex": "Male",
+        "isSold": true
       },
       {
         "name": "Puppy #3", 
         "nickname": "Whopper",
         "price": 1200,
         "images": ["/easter/easter_whopper.jpeg"],
-        "sex": "Male"
+        "sex": "Male",
+        "isSold": true
       },
       {
         "name": "Puppy #4", 
         "nickname": "Cadbury",
         "price": 1200,
         "images": ["/easter/easter_cadbury.jpeg"],
-        "sex": "Male"
+        "sex": "Male",
+        "isSold": true
       },
       {
         "name": "Puppy #5", 
         "nickname": "Peep",
         "price": 1200,
         "images": ["/easter/easter_peep.jpeg"],
-        "sex": "Male"
+        "sex": "Male",
+        "isSold": true
       },
       {
         "name": "Puppy #6", 
         "nickname": "Hershey",
         "price": 1200,
         "images": ["/easter/easter_hershey.jpeg"],
-        "sex": "Female"
+        "sex": "Female",
+        "isSold": true
       },
       {
         "name": "Puppy #7", 
         "nickname": "Reese",
         "price": 1200,
         "images": ["/easter/easter_reese.jpeg"],
-        "sex": "Female"
+        "sex": "Female",
+        "isSold": true
       }
     ]
   }
