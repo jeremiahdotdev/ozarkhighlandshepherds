@@ -1,6 +1,6 @@
 <template>
-   <div class="flex flex-row flex-wrap gap-6 py-6 justify-around items-center">
-        <Icon v-for="icon of icons" :src="icon" />
+   <div class="mt-8 grid grid-cols-3 items-center gap-4 border-t border-stone-200 pt-6 dark:border-neutral-800">
+        <Icon v-for="icon of icons" :key="icon" :src="icon" />
    </div>
 </template>
     

@@ -1,6 +1,6 @@
 <template>
-    <footer class="font-thin py-4 border-t shadow-xl text-neutral-800 dark:bg-neutral-900 dark:text-neutral-400 dark:border-neutral-500">
-        <div class="container mx-auto text-center">
+    <footer class="border-t border-stone-200 bg-white py-5 text-sm text-stone-600 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-400">
+        <div class="mx-auto max-w-7xl px-4 text-center">
             <p>&copy; {{ new Date().getFullYear() }} {{ en.copyright }}</p>
         </div>
     </footer>

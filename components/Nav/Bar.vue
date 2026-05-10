@@ -1,18 +1,18 @@
 <template>
-    <nav class="static h-[64px] w-full min-w-64 p-2 bg-white border-b shadow-xl md:fixed dark:bg-neutral-900 dark:text-neutral-200 dark:border-neutral-500">
-      <div class="container mx-auto flex justify-between items-center">
-        <NuxtLink to="/" class="flex items-center gap-2 pb-2 text-lg font-light font-bold font-serif leading-snug md:text-xl">
-          <NuxtImg src="/highland.png" :width="45" :height="45" alt="Home Icon" class="rounded-full border-2 border-black" format="webp"/>
-          {{ en.title }}
+    <nav class="sticky top-0 z-40 min-h-16 w-full border-b border-stone-200/80 bg-white/90 px-4 py-2 shadow-sm backdrop-blur md:fixed dark:border-neutral-800 dark:bg-neutral-950/90 dark:text-neutral-100">
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <NuxtLink to="/" class="flex min-w-0 items-center gap-3 text-base font-semibold leading-tight text-stone-900 transition hover:text-emerald-800 md:text-lg dark:text-neutral-50 dark:hover:text-emerald-300">
+          <NuxtImg src="/highland.png" :width="44" :height="44" alt="Ozark Highland Shepherds logo" class="h-11 w-11 shrink-0 rounded-full border border-stone-300 object-cover shadow-sm dark:border-neutral-700" format="webp"/>
+          <span class="truncate">{{ en.title }}</span>
         </NuxtLink>
-        <NavLinkList @linkClicked="toggleMenu" class="hidden justify-center items-center gap-4 md:flex" :routes="routes" />
-        <button @click="toggleMenu" :aria-label="en.menu" :class="['z-50 pr-2 pb-2 flex items-center transition-all md:hidden focus:outline-none', { 'rotate-90': isMenuOpen }]">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <NavLinkList @linkClicked="closeMenu" class="hidden items-center justify-center gap-1 md:flex" :routes="routes" />
+        <button @click="toggleMenu" :aria-label="en.menu" :aria-expanded="isMenuOpen" :class="['z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-200 bg-stone-50 text-stone-800 transition md:hidden dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100', { 'rotate-90': isMenuOpen }]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
         </button>
       </div>
-      <NavLinkList @linkClicked="toggleMenu" :routes="routes" v-if="isMenuOpen" class="absolute z-10 flex flex-col gap-4 justify-center items-center w-full left-0 top-0 border-b-2 bg-neutral-50 pb-4 pt-8 md:hidden dark:bg-neutral-900 dark:text-neutral-200 dark:border-neutral-500" />
+      <NavLinkList @linkClicked="closeMenu" :routes="routes" v-if="isMenuOpen" class="absolute left-0 top-full z-30 flex w-full flex-col items-stretch gap-1 border-b border-stone-200 bg-white px-4 py-4 shadow-lg md:hidden dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-100" />
     </nav>
   </template>
   
@@ -24,6 +24,10 @@
 
   function toggleMenu() {
     isMenuOpen.value = !isMenuOpen.value
+  }
+
+  function closeMenu() {
+    isMenuOpen.value = false
   }
 </script>
 

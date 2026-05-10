@@ -14,10 +14,9 @@
 
 <template>
   <ul :class="props.class">
-    <li v-for="(route, name) of props.routes">
+    <li v-for="(route, name) of props.routes" :key="name">
       <NavLink
       v-if="!route?.disabled"
-      :key="name"
       :route="route"
       @linkClicked="handleClick"
       />
