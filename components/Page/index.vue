@@ -2,12 +2,20 @@
   <section class="min-h-[calc(100vh-64px)] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
     <div class="mx-auto grid max-w-[90rem] overflow-hidden rounded-[2rem] border border-border-muted bg-surface shadow-card ring-1 ring-surface-ring backdrop-blur-[1px] lg:min-h-[calc(100vh-64px-4rem)] lg:grid-cols-2">
       <div class="relative min-h-72 w-full overflow-hidden bg-surface-media lg:min-h-full" :class="[{'lg:order-2': isFlipped}]">
+        <div
+          :class="['pointer-events-none absolute inset-0 z-10 image-shimmer transition-opacity duration-500', isImageLoaded ? 'opacity-0' : 'opacity-100']"
+          aria-hidden="true"
+        />
         <NuxtImg 
           :src="image" 
           :alt="imageAlt"
-          class="h-full min-h-72 w-full object-cover lg:absolute lg:inset-0 lg:min-h-full"
+          :class="['h-[75vh] min-h-72 w-full object-cover transition duration-700 ease-out lg:absolute lg:inset-0 lg:h-full lg:min-h-full', isImageLoaded ? 'image-blur-ready' : 'image-blur-load']"
           sizes="100vw lg:50vw"
           format="webp"
+          loading="lazy"
+          decoding="async"
+          @load="onImageLoad"
+          @error="onImageLoad"
          />
         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-overlay via-transparent to-transparent lg:bg-gradient-to-r lg:from-overlay-wide lg:via-transparent lg:to-transparent" />
       </div>
@@ -25,4 +33,9 @@
 const props = defineProps<{ image: string, imageAlt?: string, isFlipped?: boolean }>();
 const { data: appContent } = await useAppContent()
 const imageAlt = computed(() => props.imageAlt ?? appContent.value!.site.defaultImageAlt)
+const isImageLoaded = ref(false)
+
+function onImageLoad() {
+  isImageLoaded.value = true
+}
 </script>

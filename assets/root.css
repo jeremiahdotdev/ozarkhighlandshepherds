@@ -208,9 +208,6 @@
 
     --overlay: rgba(47, 28, 13, 0.45);
     --overlay-wide: rgba(47, 28, 13, 0.3);
-    --page-section-splash-light: linear-gradient(to bottom, rgba(247, 241, 232, 0.72), rgba(232, 219, 201, 0.84));
-    --page-section-splash-dark: linear-gradient(to bottom, rgba(20, 17, 15, 0.76), rgba(15, 13, 11, 0.88));
-
     --shadow-nav: 0 10px 35px -22px rgba(68, 43, 20, 0.7);
     --shadow-brand: 0 8px 18px -10px rgba(68, 43, 20, 0.9);
     --shadow-card: 0 30px 80px -45px rgba(76, 48, 23, 0.48);
@@ -283,6 +280,22 @@
 }
 
 @layer utilities {
+  .image-shimmer {
+    background-image: linear-gradient(110deg, rgba(255, 255, 255, 0.08) 8%, rgba(255, 255, 255, 0.35) 18%, rgba(255, 255, 255, 0.08) 33%);
+    background-size: 220% 100%;
+    animation: image-shimmer-wave 1.4s linear infinite;
+  }
+
+  .image-blur-load {
+    filter: blur(16px);
+    transform: scale(1.04);
+  }
+
+  .image-blur-ready {
+    filter: blur(0);
+    transform: scale(1);
+  }
+
   .font-display {
     font-family: 'Cinzel', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   }
@@ -376,5 +389,18 @@
   @media (min-width: 768px) {
     .md\:from-overlay-wide { --tw-gradient-from: rgba(47, 28, 13, 0.3) var(--tw-gradient-from-position); }
     .dark .md\:from-overlay-wide { --tw-gradient-from: rgba(0, 0, 0, 0.45) var(--tw-gradient-from-position); }
+  }
+}
+
+@keyframes image-shimmer-wave {
+  100% {
+    background-position-x: -220%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-shimmer {
+    animation: none;
+    background-image: none;
   }
 }

@@ -53,10 +53,6 @@ export default <Partial<Config>>{
         metric: 'var(--tracking-metric)',
         title: 'var(--tracking-title)',
       },
-      backgroundImage: {
-        'page-splash-light': "var(--page-section-splash-light), url('/bg/bg-light.png')",
-        'page-splash-dark': "var(--page-section-splash-dark), url('/bg/bg-dark.png')",
-      },
     },
   },
 }
