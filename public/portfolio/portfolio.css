@@ -18,8 +18,8 @@
 
 .portfolio-surface p {
   font-family: Georgia, "Times New Roman", serif;
-  font-weight: 600;
-  line-height: 1.75;
+  font-weight: 500;
+  line-height: 1.55;
   color: hsl(var(--foreground));
 }
 
