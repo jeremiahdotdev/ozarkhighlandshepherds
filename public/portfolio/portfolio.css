@@ -9,10 +9,8 @@
   background: rgb(255 251 245 / 0.82);
   box-shadow: 0 12px 28px rgb(41 56 37 / 0.12);
   backdrop-filter: blur(10px);
-}
-
-.portfolio-surface {
   font-family: Georgia, "Times New Roman", serif;
+  color: black;
   font-weight: 400;
   line-height: 1.55;
 }
