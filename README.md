@@ -41,6 +41,16 @@ npm run dev
 
 This will start the application at `http://localhost:3000`, where you can view the site in your browser.
 
+## Sanity Content
+
+Static site copy now loads from Sanity through the `/api/app-content` endpoint, with the old JSON content used as a fallback until Sanity is configured.
+
+1. Copy `.env.example` to `.env` and set your Sanity project values.
+2. Run `npm run sanity:dev` to open the local Studio.
+3. Import the starter content with `npm run sanity:import`.
+
+Schemas live in [sanity/schema](/Users/jgage/Code/ozarkhighlandshepherds/sanity/schema) and starter documents live in [sanity/seed/initialContent.ndjson](/Users/jgage/Code/ozarkhighlandshepherds/sanity/seed/initialContent.ndjson).
+
 ## License
 
 This project is licensed under the MIT License.

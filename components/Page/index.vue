@@ -23,5 +23,6 @@
   
 <script lang="ts" setup>
 const props = defineProps<{ image: string, imageAlt?: string, isFlipped?: boolean }>();
-const imageAlt = computed(() => props.imageAlt ?? 'Ozark Highland Shepherds German Shepherd')
+const { data: appContent } = await useAppContent()
+const imageAlt = computed(() => props.imageAlt ?? appContent.value!.site.defaultImageAlt)
 </script>

@@ -9,14 +9,21 @@
     "generate": "nuxt generate",
     "preview": "node .output/server/index.mjs",
     "preview:nuxt": "nuxt preview",
+    "sanity": "sanity",
+    "sanity:dev": "sanity dev",
+    "sanity:schema": "nuxi prepare && sanity schemas extract --path sanity.schema.json",
+    "sanity:typegen": "npm run sanity:schema && sanity typegen generate",
+    "sanity:import": "sanity datasets import -d ${SANITY_STUDIO_DATASET:-production} sanity/seed/initialContent.ndjson",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "@sanity/client": "^7.23.0",
     "iconify": "^1.4.0",
     "ipx": "^3.0.1",
     "nuxt": "^3.13.0",
     "optional": "^0.1.4",
+    "sanity": "^6.3.0",
     "sharp": "^0.33.5",
     "vue": "latest",
     "vue-router": "latest"
@@ -25,5 +32,6 @@
     "@iconify-json/heroicons": "^1.2.2",
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/color-mode": "^3.5.1"
-  }
+  },
+  "packageManager": "pnpm@10.26.0+sha512.3b3f6c725ebe712506c0ab1ad4133cf86b1f4b687effce62a9b38b4d72e3954242e643190fc51fa1642949c735f403debd44f5cb0edd657abe63a8b6a7e1e402"
 }

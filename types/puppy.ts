@@ -1,14 +1,8 @@
-import type { Sex } from "./sex";
+import type { Puppy as SanityPuppy } from "~/sanity.types";
+import type { StripSanityMeta } from "./sanity";
 
-export interface Puppy {
-    name: string;
-    nickname: string;
-    sex: Sex;
-    price: number;
-    images: string[];
-    isSold?: boolean;
-}
 
+export type Puppy = StripSanityMeta<SanityPuppy>
 export function isPuppy(value: any): value is Puppy {
     if  (typeof value !== 'object') return false;
     if  (!Object.hasOwn(value, 'name')) return false;

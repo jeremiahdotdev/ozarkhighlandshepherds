@@ -11,19 +11,19 @@
           class="h-2.5 rounded-full transition-all"
           :class="position - 1 === currentIndex ? 'w-8 bg-emerald-700 dark:bg-emerald-400' : 'w-2.5 bg-stone-300 hover:bg-stone-400 dark:bg-neutral-700 dark:hover:bg-neutral-600'"
           type="button"
-          :aria-label="`View item ${position}`"
+          :aria-label="`${viewItemLabel} ${position}`"
           @click="emit('select', position - 1)"
         />
       </div>
     </div>
     <div class="flex min-h-40 items-center justify-between gap-3">
-      <IconButton :onClick="() => emit('previous')" ariaLabel="Previous">
+      <IconButton :onClick="() => emit('previous')" :ariaLabel="previousLabel">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </IconButton>
       <slot />
-      <IconButton :onClick="() => emit('next')" ariaLabel="Next">
+      <IconButton :onClick="() => emit('next')" :ariaLabel="nextLabel">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
@@ -36,6 +36,9 @@
 defineProps<{
   currentIndex: number;
   total: number;
+  previousLabel: string;
+  nextLabel: string;
+  viewItemLabel: string;
 }>();
 
 const emit = defineEmits<{

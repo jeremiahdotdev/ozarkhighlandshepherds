@@ -1,11 +1,11 @@
 <template>
-  <Page :image="image" :isFlipped="true">
-    <PageTitle :content="title"/>
-    <PageText :content="content"/>
+  <Page :image="faq.image" :isFlipped="true">
+    <PageTitle :content="faq.title"/>
+    <PageText :content="faq.content"/>
   </Page>
 </template>
   
 <script lang="ts" setup>
-  import en from "~/assets/en.json"
-  const { image, content, title } = en.faq
+  const { data: appContent } = await useAppContent()
+  const faq = computed(() => appContent.value!.faq)
 </script>

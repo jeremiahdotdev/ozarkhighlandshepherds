@@ -1,12 +1,12 @@
 <template>
-  <Page :image="image" :isFlipped="false">
-    <PageTitle :content="title"/>
-    <PageText :content="content"/>
+  <Page :image="home.image" :isFlipped="false">
+    <PageTitle :content="home.title"/>
+    <PageText :content="home.content"/>
     <IconList :icons="['/custom_akc.svg','/breeding_rights.svg', '/vet_checked.svg']"/>
   </Page>
 </template>
   
 <script lang="ts" setup>
-  import en from "~/assets/en.json"
-  const { image, content, title } = en.welcome
+  const { data: appContent } = await useAppContent()
+  const home = computed(() => appContent.value!.home)
 </script>

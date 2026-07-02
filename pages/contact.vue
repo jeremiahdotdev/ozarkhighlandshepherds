@@ -1,12 +1,12 @@
 <template>
-    <Page :image="image" :isFlipped="false">
-        <PageTitle :content="title"/>
-        <PageText :content="content"/>
+    <Page :image="contact.image" :isFlipped="false">
+        <PageTitle :content="contact.title"/>
+        <PageText :content="contact.content"/>
     </Page>
 </template>
 
 <script lang="ts" setup>
-import en from "~/assets/en.json"
-const { image, content, title } = en.contact
+const { data: appContent } = await useAppContent()
+const contact = computed(() => appContent.value!.contact)
 </script>
   
