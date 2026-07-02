@@ -1,11 +1,11 @@
 {
   "name":"German Shepherd Litters",
   "description": ["We give each of our German Shepherd litters a simple theme to help tell them apart. Previous litters include themes such as 'Easter Candy' or the Wild West. It’s a fun way to keep things organized and gives each puppy a name that fits the group."],
-  "images": ["/dagger_field.png"],
+  "images": ["/dogs/dagger_field.png"],
   "litters": [      
   {
     "name": "All",
-    "images": ["/dagger_field.png"]
+    "images": ["/dogs/dagger_field.png"]
   },
   {
     "name": "Easter Litter",

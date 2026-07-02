@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@property --background {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ece2d2;
+}
+
+@property --background-secondary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #f3e8d9;
+}
+
+@property --foreground {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #1c1917;
+}
+
+@property --foreground-secondary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #57534e;
+}
+
+@property --foreground-muted {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #78716c;
+}
+
+@property --surface {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(251, 247, 241, 0.9);
+}
+
+@property --surface-strong {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(248, 241, 231, 0.96);
+}
+
+@property --surface-soft {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(246, 237, 224, 0.88);
+}
+
+@property --surface-nav {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(247, 239, 227, 0.88);
+}
+
+@property --surface-footer {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(247, 239, 227, 0.92);
+}
+
+@property --surface-raised {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #fdf7ee;
+}
+
+@property --surface-inverse {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #2c221c;
+}
+
+@property --surface-media {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #e7e5e4;
+}
+
+@property --surface-ring {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0.5);
+}
+
+@property --border {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(214, 211, 209, 0.8);
+}
+
+@property --border-strong {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(168, 162, 158, 0.8);
+}
+
+@property --border-muted {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(214, 211, 209, 0.7);
+}
+
+@property --primary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #7a4b2a;
+}
+
+@property --primary-hover {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #8a5a34;
+}
+
+@property --primary-strong {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #633b20;
+}
+
+@property --primary-foreground {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #fff7ed;
+}
+
+@property --primary-border {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #b88a61;
+}
+
+@property --primary-soft {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #f6ede0;
+}
+
+@property --primary-muted {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ead7be;
+}
+
+@property --status-danger-surface {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #fee2e2;
+}
+
+@property --status-danger-foreground {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #b91c1c;
+}
+
+@property --overlay {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(47, 28, 13, 0.45);
+}
+
+@property --overlay-wide {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(47, 28, 13, 0.3);
+}
+
+@layer base {
+  :root {
+    --background: #ece2d2;
+    --background-secondary: #f3e8d9;
+    --foreground: #1c1917;
+    --foreground-secondary: #57534e;
+    --foreground-muted: #78716c;
+    --foreground-subtle: #a8a29e;
+
+    --surface: rgba(251, 247, 241, 0.9);
+    --surface-strong: rgba(248, 241, 231, 0.96);
+    --surface-soft: rgba(246, 237, 224, 0.88);
+    --surface-nav: rgba(247, 239, 227, 0.88);
+    --surface-footer: rgba(247, 239, 227, 0.92);
+    --surface-raised: #fdf7ee;
+    --surface-inverse: #2c221c;
+    --surface-media: #e7e5e4;
+    --surface-ring: rgba(255, 255, 255, 0.5);
+
+    --border: rgba(214, 211, 209, 0.8);
+    --border-strong: rgba(168, 162, 158, 0.8);
+    --border-muted: rgba(214, 211, 209, 0.7);
+
+    --primary: #7a4b2a;
+    --primary-hover: #8a5a34;
+    --primary-strong: #633b20;
+    --primary-foreground: #fff7ed;
+    --primary-border: #b88a61;
+    --primary-glow: rgba(255, 255, 255, 0.55);
+    --primary-soft: #f6ede0;
+    --primary-muted: #ead7be;
+    --status-danger-surface: #fee2e2;
+    --status-danger-foreground: #b91c1c;
+
+    --overlay: rgba(47, 28, 13, 0.45);
+    --overlay-wide: rgba(47, 28, 13, 0.3);
+    --page-section-splash-light: linear-gradient(to bottom, rgba(247, 241, 232, 0.72), rgba(232, 219, 201, 0.84));
+    --page-section-splash-dark: linear-gradient(to bottom, rgba(20, 17, 15, 0.76), rgba(15, 13, 11, 0.88));
+
+    --shadow-nav: 0 10px 35px -22px rgba(68, 43, 20, 0.7);
+    --shadow-brand: 0 8px 18px -10px rgba(68, 43, 20, 0.9);
+    --shadow-card: 0 30px 80px -45px rgba(76, 48, 23, 0.48);
+    --shadow-panel: 0 18px 35px -28px rgba(78, 51, 26, 0.8);
+    --shadow-icon-panel: 0 16px 30px -26px rgba(78, 51, 26, 0.7);
+    --shadow-button: 0 10px 20px -12px rgba(68, 43, 20, 0.9);
+    --shadow-toggle: 0 10px 25px -18px rgba(68, 43, 20, 0.85);
+    --shadow-toggle-active: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 8px 18px -14px rgba(68, 43, 20, 0.85);
+    --shadow-toggle-inverse-active: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 18px -14px rgba(0, 0, 0, 0.7);
+
+    --tracking-nav: 0.08em;
+    --tracking-subtle: 0.08em;
+    --tracking-caps: 0.16em;
+    --tracking-metric: 0.18em;
+    --tracking-title: -0.02em;
+    --tracking-display: 0.01em;
+  }
+
+  .dark {
+    --background: #15110e;
+    --background-secondary: #221b16;
+    --foreground: #f5f5f4;
+    --foreground-secondary: #d6d3d1;
+    --foreground-muted: #a8a29e;
+    --foreground-subtle: #78716c;
+
+    --surface: rgba(26, 21, 17, 0.9);
+    --surface-strong: rgba(18, 15, 12, 0.7);
+    --surface-soft: rgba(28, 22, 18, 0.88);
+    --surface-nav: rgba(22, 18, 15, 0.88);
+    --surface-footer: rgba(22, 18, 15, 0.92);
+    --surface-raised: #2a211b;
+    --surface-inverse: #0f0d0b;
+    --surface-media: #262626;
+    --surface-ring: rgba(41, 37, 36, 0.7);
+
+    --border: rgba(68, 64, 60, 0.8);
+    --border-strong: rgba(87, 83, 78, 0.8);
+    --border-muted: rgba(68, 64, 60, 0.7);
+
+    --primary: #e3c39f;
+    --primary-hover: #d9ba94;
+    --primary-strong: #e0c19d;
+    --primary-foreground: #0f0d0b;
+    --primary-border: #8d6a4f;
+    --primary-glow: rgba(255, 255, 255, 0.08);
+    --primary-soft: #1c1612;
+    --primary-muted: #ead7be;
+    --status-danger-surface: #450a0a;
+    --status-danger-foreground: #fca5a5;
+
+    --overlay: rgba(0, 0, 0, 0.45);
+    --overlay-wide: rgba(0, 0, 0, 0.45);
+
+    --shadow-brand: 0 8px 18px -10px rgba(0, 0, 0, 0.65);
+    --shadow-button: 0 10px 20px -12px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-fade,
+  html.theme-fade.dark,
+  html.theme-fade *,
+  html.theme-fade *::before,
+  html.theme-fade *::after {
+    transition-duration: 700ms !important;
+    transition-timing-function: ease !important;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow, opacity, --background, --background-secondary, --foreground, --foreground-secondary, --foreground-muted, --surface, --surface-strong, --surface-soft, --surface-nav, --surface-footer, --surface-raised, --surface-inverse, --surface-media, --surface-ring, --border, --border-strong, --border-muted, --primary, --primary-hover, --primary-strong, --primary-foreground, --primary-border, --primary-soft, --primary-muted, --status-danger-surface, --status-danger-foreground, --overlay, --overlay-wide !important;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cinzel', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  }
+
+  .tracking-display {
+    letter-spacing: var(--tracking-display);
+  }
+
+  .bg-background { background-color: #ece2d2; }
+  .bg-background-secondary { background-color: #f3e8d9; }
+  .bg-border { background-color: rgba(214, 211, 209, 0.8); }
+  .bg-primary { background-color: #7a4b2a; }
+  .bg-primary-hover { background-color: #8a5a34; }
+  .bg-status-danger-surface { background-color: #fee2e2; }
+  .bg-surface { background-color: rgba(251, 247, 241, 0.9); }
+  .bg-surface-footer { background-color: rgba(247, 239, 227, 0.92); }
+  .bg-surface-inverse { background-color: #2c221c; }
+  .bg-surface-media { background-color: #e7e5e4; }
+  .bg-surface-nav { background-color: rgba(247, 239, 227, 0.88); }
+  .bg-surface-raised { background-color: #fdf7ee; }
+  .bg-surface-soft { background-color: rgba(246, 237, 224, 0.88); }
+  .bg-surface-strong { background-color: rgba(248, 241, 231, 0.96); }
+
+  .border-border { border-color: rgba(214, 211, 209, 0.8); }
+  .border-border-muted { border-color: rgba(214, 211, 209, 0.7); }
+  .border-border-strong { border-color: rgba(168, 162, 158, 0.8); }
+  .border-primary-border { border-color: #b88a61; }
+
+  .text-foreground { color: #1c1917; }
+  .text-foreground-muted { color: #78716c; }
+  .text-foreground-secondary { color: #57534e; }
+  .text-primary { color: #7a4b2a; }
+  .text-primary-foreground { color: #fff7ed; }
+  .text-primary-hover { color: #8a5a34; }
+  .text-status-danger-foreground { color: #b91c1c; }
+
+  .ring-surface-ring { --tw-ring-color: rgba(255, 255, 255, 0.5); }
+  .from-overlay { --tw-gradient-from: rgba(47, 28, 13, 0.45) var(--tw-gradient-from-position); }
+
+  .hover\:border-primary-border:hover { border-color: #b88a61; }
+  .hover\:bg-border-strong:hover { background-color: rgba(168, 162, 158, 0.8); }
+  .hover\:bg-primary-strong:hover { background-color: #633b20; }
+  .hover\:text-primary:hover { color: #7a4b2a; }
+  .hover\:text-primary-hover:hover { color: #8a5a34; }
+  .hover\:text-primary-strong:hover { color: #633b20; }
+
+  .focus\:ring-primary-hover:focus { --tw-ring-color: #8a5a34; }
+  .focus\:ring-offset-background:focus { --tw-ring-offset-color: #ece2d2; }
+
+  .dark .bg-background { background-color: #15110e; }
+  .dark .bg-background-secondary { background-color: #221b16; }
+  .dark .bg-border { background-color: rgba(68, 64, 60, 0.8); }
+  .dark .bg-primary { background-color: #e3c39f; }
+  .dark .bg-primary-hover { background-color: #d9ba94; }
+  .dark .bg-status-danger-surface { background-color: #450a0a; }
+  .dark .bg-surface { background-color: rgba(26, 21, 17, 0.9); }
+  .dark .bg-surface-footer { background-color: rgba(22, 18, 15, 0.92); }
+  .dark .bg-surface-inverse { background-color: #0f0d0b; }
+  .dark .bg-surface-media { background-color: #262626; }
+  .dark .bg-surface-nav { background-color: rgba(22, 18, 15, 0.88); }
+  .dark .bg-surface-raised { background-color: #2a211b; }
+  .dark .bg-surface-soft { background-color: rgba(28, 22, 18, 0.88); }
+  .dark .bg-surface-strong { background-color: rgba(18, 15, 12, 0.7); }
+
+  .dark .border-border { border-color: rgba(68, 64, 60, 0.8); }
+  .dark .border-border-muted { border-color: rgba(68, 64, 60, 0.7); }
+  .dark .border-border-strong { border-color: rgba(87, 83, 78, 0.8); }
+  .dark .border-primary-border { border-color: #8d6a4f; }
+
+  .dark .text-foreground { color: #f5f5f4; }
+  .dark .text-foreground-muted { color: #a8a29e; }
+  .dark .text-foreground-secondary { color: #d6d3d1; }
+  .dark .text-primary { color: #e3c39f; }
+  .dark .text-primary-foreground { color: #0f0d0b; }
+  .dark .text-primary-hover { color: #d9ba94; }
+  .dark .text-status-danger-foreground { color: #fca5a5; }
+
+  .dark .ring-surface-ring { --tw-ring-color: rgba(41, 37, 36, 0.7); }
+  .dark .from-overlay { --tw-gradient-from: rgba(0, 0, 0, 0.45) var(--tw-gradient-from-position); }
+
+  .dark .hover\:border-primary-border:hover { border-color: #8d6a4f; }
+  .dark .hover\:bg-border-strong:hover { background-color: rgba(87, 83, 78, 0.8); }
+  .dark .hover\:bg-primary-strong:hover { background-color: #e0c19d; }
+  .dark .hover\:text-primary:hover { color: #e3c39f; }
+  .dark .hover\:text-primary-hover:hover { color: #d9ba94; }
+  .dark .hover\:text-primary-strong:hover { color: #e0c19d; }
+
+  .dark .focus\:ring-primary-hover:focus { --tw-ring-color: #d9ba94; }
+  .dark .focus\:ring-offset-background:focus { --tw-ring-offset-color: #15110e; }
+
+  @media (min-width: 768px) {
+    .md\:from-overlay-wide { --tw-gradient-from: rgba(47, 28, 13, 0.3) var(--tw-gradient-from-position); }
+    .dark .md\:from-overlay-wide { --tw-gradient-from: rgba(0, 0, 0, 0.45) var(--tw-gradient-from-position); }
+  }
+}

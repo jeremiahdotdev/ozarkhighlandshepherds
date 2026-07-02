@@ -1,7 +1,7 @@
 <template>
-  <div class="rounded-lg border border-stone-200 bg-stone-50 p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-950/60">
+  <div class="rounded-[1.5rem] border border-border bg-surface-soft p-5 shadow-panel">
     <div class="mb-4 flex items-center justify-between gap-3">
-      <p class="text-sm font-semibold uppercase tracking-wide text-emerald-800 dark:text-emerald-300">
+      <p class="text-sm font-semibold uppercase tracking-metric text-primary-hover">
         {{ currentIndex + 1 }} / {{ total }}
       </p>
       <div class="flex gap-2">
@@ -9,7 +9,7 @@
           v-for="position in total"
           :key="position"
           class="h-2.5 rounded-full transition-all"
-          :class="position - 1 === currentIndex ? 'w-8 bg-emerald-700 dark:bg-emerald-400' : 'w-2.5 bg-stone-300 hover:bg-stone-400 dark:bg-neutral-700 dark:hover:bg-neutral-600'"
+          :class="position - 1 === currentIndex ? 'w-8 bg-primary-hover' : 'w-2.5 bg-border hover:bg-border-strong'"
           type="button"
           :aria-label="`${viewItemLabel} ${position}`"
           @click="emit('select', position - 1)"

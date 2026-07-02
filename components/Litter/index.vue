@@ -14,14 +14,14 @@
         @select="selectItem"
       >
         <ul v-if="isPuppy(currentItem) && currentItem.price" class="grid w-full max-w-sm gap-3 px-2 text-sm sm:text-base">
-          <li class="text-center text-2xl font-bold leading-tight text-stone-950 dark:text-white">{{ currentItem?.name }}</li>
-          <li class="flex items-center justify-between gap-4 border-t border-stone-200 pt-3 dark:border-neutral-800"><b>{{ site.litter.nickname }}</b><span>{{ currentItem.nickname }}</span></li>
+          <li class="text-center text-2xl font-bold leading-tight text-foreground">{{ currentItem?.name }}</li>
+          <li class="flex items-center justify-between gap-4 border-t border-border pt-3"><b>{{ site.litter.nickname }}</b><span>{{ currentItem.nickname }}</span></li>
           <li class="flex items-center justify-between gap-4"><b>{{ site.litter.sex }}</b><span>{{ currentItem.sex }}</span></li>
           <li v-if="!currentItem.isSold" class="flex items-center justify-between gap-4"><b>{{ site.litter.price }}</b><span>${{ currentItem.price }}</span></li>
-          <li v-else class="flex items-center justify-between gap-4"><b>{{ site.litter.price }}</b><b class="rounded-full bg-red-100 px-3 py-1 text-xs uppercase text-red-700 dark:bg-red-950 dark:text-red-300">{{ site.litter.sold }}</b></li>
+          <li v-else class="flex items-center justify-between gap-4"><b>{{ site.litter.price }}</b><b class="rounded-full bg-status-danger-surface px-3 py-1 text-xs uppercase text-status-danger-foreground">{{ site.litter.sold }}</b></li>
         </ul>
         <div v-else class="flex w-full items-center justify-center px-2 text-center">
-          <p class="text-2xl font-bold leading-tight text-stone-950 dark:text-white">{{ currentItem?.name }}</p>
+          <p class="text-2xl font-bold leading-tight text-foreground">{{ currentItem?.name }}</p>
         </div>
       </CarouselCard>
     </div>

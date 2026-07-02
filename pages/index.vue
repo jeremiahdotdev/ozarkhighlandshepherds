@@ -2,7 +2,7 @@
   <Page :image="home.image" :isFlipped="false">
     <PageTitle :content="home.title"/>
     <PageText :content="home.content"/>
-    <IconList :icons="['/custom_akc.svg','/breeding_rights.svg', '/vet_checked.svg']"/>
+    <IconList :icons="['/icons/badges/custom_akc.svg','/icons/badges/breeding_rights.svg', '/icons/badges/vet_checked.svg']"/>
   </Page>
 </template>
   

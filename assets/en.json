@@ -11,7 +11,7 @@
     "sold": "[Sold]"
   },
   "welcome": {
-    "image": "/dagger_snow.jpg",
+    "image": "/dogs/dagger_snow.jpg",
     "title": "Ozark Highland Shepherds",
     "content": [
       "Welcome to Ozark Highland Shepherds! Our small, family-owned kennel focuses on raising working-type German Shepherds. Our dogs are life companions, going everywhere with us on our homestead in Southwest Missouri.",
@@ -20,7 +20,7 @@
     ]
   },
   "faq": {
-    "image": "/tilde_snow.jpg",
+    "image": "/dogs/tilde_snow.jpg",
     "title": "Frequently Asked Questions",
     "content": [
       "Ozark Highland Shepherds is dedicated to breeding quality German Shepherds raised with care in a natural environment.",
@@ -31,7 +31,7 @@
     ]
   },
   "contact": {
-    "image": "/dagger_field.jpeg",
+    "image": "/dogs/dagger_field.jpeg",
     "title": "Contact",
     "content": [
       "We’d love to hear from you! Whether you have questions about our dogs, want to learn more about our breeding practices, or are interested in welcoming a new companion into your home, we’re happy to help.",

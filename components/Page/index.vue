@@ -1,19 +1,19 @@
 <template>
-  <section class="min-h-[calc(100vh-64px)] bg-stone-50 dark:bg-neutral-950">
-    <div class="mx-auto grid max-w-[90rem] overflow-hidden bg-white shadow-sm ring-1 ring-stone-200 md:min-h-[calc(100vh-64px)] md:grid-cols-2 dark:bg-neutral-900 dark:ring-neutral-800">
-      <div class="relative min-h-72 w-full overflow-hidden bg-stone-200 md:min-h-full dark:bg-neutral-800" :class="[{'md:order-2': isFlipped}]">
+  <section class="min-h-[calc(100vh-64px)] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+    <div class="mx-auto grid max-w-[90rem] overflow-hidden rounded-[2rem] border border-border-muted bg-surface shadow-card ring-1 ring-surface-ring backdrop-blur-[1px] lg:min-h-[calc(100vh-64px-4rem)] lg:grid-cols-2">
+      <div class="relative min-h-72 w-full overflow-hidden bg-surface-media lg:min-h-full" :class="[{'lg:order-2': isFlipped}]">
         <NuxtImg 
           :src="image" 
           :alt="imageAlt"
-          class="h-full min-h-72 w-full object-cover md:absolute md:inset-0 md:min-h-full"
-          sizes="100vw md:50vw"
+          class="h-full min-h-72 w-full object-cover lg:absolute lg:inset-0 lg:min-h-full"
+          sizes="100vw lg:50vw"
           format="webp"
          />
-        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent md:bg-gradient-to-r md:from-black/10 md:to-transparent" />
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-overlay via-transparent to-transparent lg:bg-gradient-to-r lg:from-overlay-wide lg:via-transparent lg:to-transparent" />
       </div>
   
-      <div class="flex w-full items-center justify-center px-5 py-10 sm:px-8 md:px-12 md:py-16 lg:px-16">
-        <div class="w-full max-w-xl text-base leading-8 text-stone-700 sm:text-lg dark:text-neutral-300">
+      <div class="flex w-full items-center justify-center px-6 py-10 sm:px-10 lg:px-14 lg:py-16 lg:px-18">
+        <div class="w-full max-w-xl text-base leading-8 text-foreground-secondary sm:text-lg">
           <slot></slot>
         </div>
       </div>
