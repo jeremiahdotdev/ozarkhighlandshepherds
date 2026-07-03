@@ -296,6 +296,22 @@
     transform: scale(1);
   }
 
+  .image-soft-load {
+    filter: blur(8px);
+    transform: scale(1.015);
+    opacity: 0.9;
+  }
+
+  .image-soft-ready {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .image-soft-fade-in {
+    animation: image-soft-fade-in 520ms ease-out both;
+  }
+
   .font-display {
     font-family: 'Cinzel', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   }
@@ -398,9 +414,27 @@
   }
 }
 
+@keyframes image-soft-fade-in {
+  from {
+    opacity: 0.82;
+    filter: blur(6px);
+    transform: scale(1.01);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .image-shimmer {
     animation: none;
     background-image: none;
+  }
+
+  .image-soft-fade-in {
+    animation: none;
   }
 }

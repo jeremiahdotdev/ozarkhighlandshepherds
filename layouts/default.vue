@@ -1,10 +1,6 @@
 <template>
   <div class="relative min-h-screen overflow-hidden bg-background text-foreground antialiased transition-colors duration-700">
     <div
-      :class="['pointer-events-none absolute inset-0 z-0 image-shimmer transition-opacity duration-700', areBackgroundsLoaded ? 'opacity-0' : 'opacity-100']"
-      aria-hidden="true"
-    />
-    <div
       class="pointer-events-none absolute inset-0 opacity-100 transition-opacity duration-700 ease-in-out dark:opacity-0"
       aria-hidden="true"
     >
@@ -14,7 +10,7 @@
         loading="lazy"
         decoding="async"
         format="webp"
-        :class="['h-full w-full object-cover transition duration-1000 ease-out', isLightBgLoaded ? 'opacity-100 image-blur-ready' : 'opacity-0 image-blur-load']"
+        :class="['h-full w-full object-cover transition-opacity duration-1000 ease-out', isLightBgLoaded ? 'opacity-100' : 'opacity-0']"
         @load="onLightBgLoad"
         @error="onLightBgLoad"
       />
@@ -30,7 +26,7 @@
         loading="lazy"
         decoding="async"
         format="webp"
-        :class="['h-full w-full object-cover transition duration-1000 ease-out', isDarkBgLoaded ? 'opacity-100 image-blur-ready' : 'opacity-0 image-blur-load']"
+        :class="['h-full w-full object-cover transition-opacity duration-1000 ease-out', isDarkBgLoaded ? 'opacity-100' : 'opacity-0']"
         @load="onDarkBgLoad"
         @error="onDarkBgLoad"
       />
@@ -47,8 +43,6 @@
 <script setup lang="ts">
 const isLightBgLoaded = ref(false)
 const isDarkBgLoaded = ref(false)
-
-const areBackgroundsLoaded = computed(() => isLightBgLoaded.value && isDarkBgLoaded.value)
 
 function onLightBgLoad() {
   isLightBgLoaded.value = true
