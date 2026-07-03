@@ -1,3 +1,10 @@
+.dark .portfolio-card-background {
+  background-color: #3c3c3c;
+  background-position: center;
+  background-size: cover;
+  color: #e7e7e7;
+}
+
 .dark .portfolio-url {
   color: #16c277;
 }
