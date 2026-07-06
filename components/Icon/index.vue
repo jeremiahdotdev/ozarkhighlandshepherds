@@ -1,5 +1,5 @@
 <template>
-    <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[1.25rem] border border-border bg-surface-strong p-5 shadow-icon-panel">
+    <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[1.25rem] md:border md:border-border md:bg-surface-strong md:shadow-icon-panel md:p-5">
       <div
         :class="['pointer-events-none absolute inset-0 image-shimmer transition-opacity duration-500', isLoaded ? 'opacity-0' : 'opacity-100']"
         aria-hidden="true"
