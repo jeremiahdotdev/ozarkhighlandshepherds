@@ -1,4 +1,5 @@
 import { defineConfig } from "sanity";
+import { structureTool } from "sanity/structure";
 import { schema } from "./sanity/schema";
 
 const projectId =
@@ -16,6 +17,7 @@ export default defineConfig({
   title: "Ozark Highland Shepherds",
   projectId,
   dataset,
+  plugins: [structureTool()],
   schema: {
     types: schema,
   },
