@@ -7,7 +7,7 @@ export function isSanityConfigured(config: {
   return Boolean(config.projectId && config.dataset);
 }
 
-export function createSanityClient(config: {
+export function createAppSanityClient(config: {
   projectId: string;
   dataset: string;
   apiVersion: string;

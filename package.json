@@ -19,6 +19,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/sanity": "^2.5.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@sanity/client": "^7.23.0",
     "iconify": "^1.4.0",

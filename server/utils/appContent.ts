@@ -5,7 +5,7 @@ import type { FaqPage } from "~/sanity/schema/documents/faqPage";
 import type { HomePage } from "~/sanity/schema/documents/homePage";
 import type { SiteSettings } from "~/sanity/schema/documents/siteSettings";
 import { fallbackAppContent } from "./fallbackContent";
-import { createSanityClient, isSanityConfigured } from "./sanity";
+import { createAppSanityClient, isSanityConfigured } from "./sanity";
 
 interface SanityAppContent {
   site?: Partial<SiteSettings>;
@@ -45,7 +45,7 @@ export async function getAppContent(): Promise<AppContent> {
   }
 
   try {
-    const client = createSanityClient({
+    const client = createAppSanityClient({
       projectId: sanityConfig.projectId,
       dataset: sanityConfig.dataset,
       apiVersion: sanityConfig.apiVersion,
