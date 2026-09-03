@@ -49,6 +49,7 @@ export async function getAppContent(): Promise<AppContent> {
       projectId: sanityConfig.projectId,
       dataset: sanityConfig.dataset,
       apiVersion: sanityConfig.apiVersion,
+      token: process.env.SANITY_API_READ_TOKEN || config.sanityReadToken,
       useCdn: sanityConfig.useCdn,
     });
     const content = await client.fetch<SanityAppContent>(APP_CONTENT_QUERY);

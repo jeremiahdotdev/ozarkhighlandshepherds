@@ -8,9 +8,10 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   runtimeConfig: {
+    sanityReadToken: '',
     public: {
-      sanityProjectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID || '',
-      sanityDataset: process.env.NUXT_PUBLIC_SANITY_DATASET || '',
+      sanityProjectId: process.env.NUXT_PUBLIC_SANITY_PROJECT_ID || process.env.SANITY_STUDIO_PROJECT_ID || '',
+      sanityDataset: process.env.NUXT_PUBLIC_SANITY_DATASET || process.env.SANITY_STUDIO_DATASET || 'production',
       sanityApiVersion: process.env.NUXT_PUBLIC_SANITY_API_VERSION || '2025-02-19',
       sanityUseCdn: process.env.NUXT_PUBLIC_SANITY_USE_CDN !== 'false',
     }

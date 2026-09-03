@@ -15,7 +15,7 @@
     "sanity:deploy": "nuxi prepare && sanity deploy",
     "sanity:schema": "nuxi prepare && sanity schemas extract --path sanity.schema.json",
     "sanity:typegen": "npm run sanity:schema && sanity typegen generate",
-    "sanity:import": "sanity datasets import -d ${SANITY_STUDIO_DATASET:-production} sanity/seed/initialContent.ndjson",
+    "sanity:import": "set -a; . ./.env; set +a; sanity datasets import -d ${SANITY_STUDIO_DATASET:-production} -t ${SANITY_IMPORT_TOKEN:-$SANITY_API_WRITE_TOKEN} --missing sanity/seed/initialContent.ndjson",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
