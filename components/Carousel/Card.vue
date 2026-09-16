@@ -1,6 +1,6 @@
 <template>
   <div class="rounded-[1.5rem] border border-border bg-surface-soft p-5 shadow-panel">
-    <div class="mb-4 flex items-center justify-between gap-3">
+    <div v-if="showControls" class="mb-4 flex items-center justify-between gap-3">
       <p class="text-sm font-semibold uppercase tracking-metric text-primary-hover">
         {{ currentIndex + 1 }} / {{ total }}
       </p>
@@ -16,14 +16,17 @@
         />
       </div>
     </div>
-    <div class="flex min-h-40 items-center justify-between gap-3">
-      <IconButton :onClick="() => emit('previous')" :ariaLabel="previousLabel">
+    <div
+      class="flex items-center gap-3"
+      :class="showControls ? 'min-h-28 justify-between sm:min-h-40' : 'justify-center'"
+    >
+      <IconButton v-if="showControls" :onClick="() => emit('previous')" :ariaLabel="previousLabel">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </IconButton>
       <slot />
-      <IconButton :onClick="() => emit('next')" :ariaLabel="nextLabel">
+      <IconButton v-if="showControls" :onClick="() => emit('next')" :ariaLabel="nextLabel">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
@@ -33,7 +36,7 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{
+const props = defineProps<{
   currentIndex: number;
   total: number;
   previousLabel: string;
@@ -46,4 +49,6 @@ const emit = defineEmits<{
   next: [];
   select: [index: number];
 }>();
+
+const showControls = computed(() => props.total > 1);
 </script>
