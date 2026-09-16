@@ -24,6 +24,7 @@
           <p class="text-2xl font-bold leading-tight text-foreground">{{ currentItem?.name }}</p>
         </div>
       </CarouselCard>
+      <slot name="footer"></slot>
     </div>
   </Page>
 </template>
