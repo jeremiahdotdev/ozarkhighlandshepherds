@@ -1,5 +1,5 @@
 <template>
-   <div class="mt-8 grid grid-cols-3 items-center gap-4 border-t border-border pt-6">
+   <div class="mx-auto grid w-full max-w-lg grid-cols-3 items-center gap-4">
         <Icon v-for="icon of icons" :key="icon" :src="icon" />
    </div>
 </template>

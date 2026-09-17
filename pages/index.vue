@@ -1,8 +1,12 @@
 <template>
   <Page :image="home.image" :isFlipped="false">
-    <PageTitle :content="home.title"/>
+    <template #title>
+      <PageTitle :content="home.title"/>
+    </template>
     <PageText :content="home.content"/>
-    <IconList :icons="['/icons/badges/custom_akc.svg','/icons/badges/breeding_rights.svg', '/icons/badges/vet_checked.svg']"/>
+    <template #image-overlay>
+      <IconList :icons="['/icons/badges/custom_akc.svg','/icons/badges/breeding_rights.svg', '/icons/badges/vet_checked.svg']"/>
+    </template>
   </Page>
 </template>
   

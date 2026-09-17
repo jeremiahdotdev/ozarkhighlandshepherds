@@ -1,6 +1,8 @@
 <template>
     <Page :image="contact.image" :isFlipped="false">
-        <PageTitle :content="contact.title"/>
+        <template #title>
+            <PageTitle :content="contact.title"/>
+        </template>
         <PageText :content="contact.content"/>
     </Page>
 </template>

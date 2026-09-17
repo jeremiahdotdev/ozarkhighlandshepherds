@@ -5,6 +5,7 @@
         aria-hidden="true"
       />
       <NuxtImg
+        class="badge-art"
         :src="src"
         :alt="site.icon"
         :class="['max-h-28 w-full max-w-32 object-contain opacity-90 transition duration-700 ease-out', isLoaded ? 'image-blur-ready' : 'image-blur-load']"
@@ -28,3 +29,9 @@
     isLoaded.value = true
   }
 </script>
+
+<style scoped>
+.badge-art.image-blur-ready {
+  filter: drop-shadow(0 2px 3px rgb(0 0 0 / 80%)) drop-shadow(0 6px 10px rgb(0 0 0 / 65%));
+}
+</style>

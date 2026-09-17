@@ -1,13 +1,16 @@
 <template>
   <section class="min-h-[calc(100vh-64px)] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
     <div class="mx-auto grid max-w-[90rem] overflow-hidden rounded-[2rem] border border-border-muted bg-surface shadow-card ring-1 ring-surface-ring backdrop-blur-[1px] lg:min-h-[calc(100vh-64px-4rem)] lg:grid-cols-2">
+      <div v-if="$slots.title" class="px-6 pt-8 sm:px-10 lg:hidden">
+        <slot name="title" />
+      </div>
       <div class="relative min-h-72 w-full overflow-hidden bg-surface-media lg:min-h-full" :class="[{'lg:order-2': isFlipped}]">
         <NuxtImg 
           :key="image"
           :src="image" 
           :alt="imageAlt"
           :class="[
-            'h-[75vh] min-h-72 w-full object-cover transition duration-500 ease-out lg:absolute lg:inset-0 lg:h-full lg:min-h-full',
+            'h-[65vh] min-h-72 w-full object-cover transition duration-500 ease-out lg:absolute lg:inset-0 lg:h-full lg:min-h-full',
             isImageLoaded ? 'image-soft-ready' : 'image-soft-load'
           ]"
           sizes="100vw lg:50vw"
@@ -18,10 +21,16 @@
           @error="onImageLoad"
          />
         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-overlay via-transparent to-transparent lg:bg-gradient-to-r lg:from-overlay-wide lg:via-transparent lg:to-transparent" />
+        <div v-if="$slots['image-overlay']" class="absolute inset-x-0 bottom-0 z-10 p-3 sm:p-6">
+          <slot name="image-overlay" />
+        </div>
       </div>
   
       <div class="flex w-full items-center justify-center px-6 py-10 sm:px-10 lg:px-14 lg:py-16 lg:px-18">
         <div class="w-full max-w-xl text-base leading-8 text-foreground-secondary sm:text-lg">
+          <div v-if="$slots.title" class="hidden lg:block">
+            <slot name="title" />
+          </div>
           <slot></slot>
         </div>
       </div>
