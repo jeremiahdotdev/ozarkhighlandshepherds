@@ -1,5 +1,5 @@
 <template>
-    <h1 class="mb-6 max-w-2xl font-display text-[2.85rem] font-normal leading-none tracking-[-0.03em] text-foreground border-b border-primary-border sm:text-[3.5rem]">{{ content }}</h1>
+    <h1 class="mb-6 max-w-2xl font-display text-[2.85rem] font-normal leading-none tracking-[-0.03em] text-foreground border-b border-primary-border sm:text-[3.5rem] xl:text-[3.75rem] 2xl:text-[4rem]">{{ content }}</h1>
 </template>
   
 <script lang="ts" setup>

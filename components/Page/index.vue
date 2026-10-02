@@ -27,7 +27,7 @@
       </div>
   
       <div class="flex w-full items-center justify-center px-6 py-10 sm:px-10 lg:px-14 lg:py-16 lg:px-18">
-        <div class="w-full max-w-xl text-base leading-8 text-foreground-secondary sm:text-lg">
+        <div class="w-full max-w-xl break-words text-base leading-8 text-foreground-secondary sm:text-lg lg:text-xl lg:leading-8 2xl:text-[1.375rem] 2xl:leading-9">
           <div v-if="$slots.title" class="hidden lg:block">
             <slot name="title" />
           </div>

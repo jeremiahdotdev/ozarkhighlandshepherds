@@ -7,7 +7,6 @@
           aria-hidden="true"
         />
         <NuxtImg
-          class="badge-art"
           :src="src"
           :alt="site.icon"
           :class="['max-h-32 w-full object-contain opacity-90 transition duration-700 ease-out', isLoaded ? 'image-blur-ready' : 'image-blur-load']"
@@ -39,9 +38,5 @@
   -webkit-mask: var(--badge-mask) center / contain no-repeat;
   mask: var(--badge-mask) center / contain no-repeat;
   mask-mode: alpha;
-}
-
-.badge-art.image-blur-ready {
-  filter: drop-shadow(0 2px 3px rgb(0 0 0 / 80%)) drop-shadow(0 6px 10px rgb(0 0 0 / 65%));
 }
 </style>
